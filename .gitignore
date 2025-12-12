@@ -1,0 +1,15 @@
+# Node modules
+node_modules/
+
+# Build folders
+frontend/.next/
+backend/dist/
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# Environment variables
+.env

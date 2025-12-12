@@ -1,0 +1,27 @@
+{
+    "info": {
+        "_postman_id": "YOUR_UNIQUE_ID",
+        "name": "Full Stack Task Manager API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        { "key": "baseUrl", "value": "http://localhost:5000/api" },
+        { "key": "token", "value": "" },
+        { "key": "taskId", "value": "" }
+    ],
+    "item": [
+        {
+            "name": "1. Authentication",
+            "item": [
+                { "name": "Signup", "request": { "method": "POST", "url": "{{baseUrl}}/auth/signup", "body": { "mode": "raw", "raw": "{\"name\":\"Test User\",\"email\":\"newuser@example.com\",\"password\":\"password123\"}" }, "description": "Register a new user." } },
+                { "name": "Login", "request": { "method": "POST", "url": "{{baseUrl}}/auth/login", "body": { "mode": "raw", "raw": "{\"email\":\"newuser@example.com\",\"password\":\"password123\"}" }, "description": "Login existing user." } }
+            ]
+        },
+        {
+            "name": "2. User Profile (Protected)",
+            "item": [
+                { "name": "GET Profile", "request": { "method": "GET", "url": "{{baseUrl}}/users/profile", "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ] } }
+            ]
+        }
+    ]
+}
